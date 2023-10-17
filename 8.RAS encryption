@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+int gcd(int a, int h)
+{
+	int hcf=1,i;
+    for(i=1;i<=a && i<=h;i++)
+    {
+    	if(a%i==0 && h%i==0)
+    	{
+    	hcf=i;	
+		}
+	}
+	return hcf;
+}
+int main()
+{
+    int p = 3;
+    int q = 7;
+    int  n = p * q;
+    int e = 2;
+    int phi = (p - 1) * (q - 1);
+    while (e < phi) {
+        if (gcd(e, phi) == 1)
+        {
+            break;
+        }
+        else
+        {
+            e++;
+        }
+    }
+    int k=2;
+    int d=(1+(k*phi))/e;
+    int msg=12;
+    
+    int c=pow(msg,e);
+    int o=c%n;
+    printf("encryption\n");
+    printf("%d",o);
+}
